@@ -1,16 +1,22 @@
-# Tufted
+# TwilightPage
+
+一个使用 Typst 实验性 HTML 导出功能构建的静态网站模板。除了基本的 `make` 外不需要任何外部依赖。
 
 A static website template built using Typst's experimental HTML export. Requires no external dependencies other than basic `make`.
 
-![Tufted website](assets/devices.webp)
+![TwilightPage website](assets/devices.webp)
 
-## Installation & Usage
+## 安装与使用 / Installation & Usage
+
+从 Typst 包注册表初始化模板：
 
 Initialize the template from the Typst package registry:
 
 ```shell
-typst init @preview/tufted:0.1.1
+typst init @preview/twilightpage:0.1.1
 ```
+
+要构建网站，运行：
 
 To build the website, run:
 
@@ -18,16 +24,14 @@ To build the website, run:
 make html
 ```
 
+探索 `content/` 文件夹查看示例。
+
 Explore the `content/` folder for examples.
 
-## Links
+## 链接 / Links
 
-- [tufted.vsheg.com](https://tufted.vsheg.com) — live demo and docs of the latest stable version
-- [dev.tufted.vsheg.com](https://dev.tufted.vsheg.com) — current dev version
-- [Repository on GitHub](https://github.com/vsheg/tufted) — source code, issues, and contributions
-- [Typst Universe](https://typst.app/universe/package/tufted) — template page
-- [Tufte CSS](https://edwardtufte.github.io/tufte-css/) — used for styling, loaded automatically from a CDN
+## 许可证 / License
 
-## License
+源代码可在 [GitHub](https://github.com/CrossDark/twilightpage) 上获取，基于 [MIT 许可证](https://github.com/CrossDark/twilightpage/blob/main/LICENSE)。`template/` 目录中的模板使用更宽松的 [MIT-0](https://opensource.org/licenses/MIT-0) 许可证。
 
-The source code is available on [GitHub](https://github.com/vsheg/tufted) under the [MIT License](https://github.com/vsheg/tufted/blob/main/LICENSE). The template in the `template/` directory uses the more permissive [MIT-0](https://opensource.org/licenses/MIT-0) license.
+The source code is available on [GitHub](https://github.com/CrossDark/twilightpage) under the [MIT License](https://github.com/CrossDark/twilightpage/blob/main/LICENSE). The template in the `template/` directory uses the more permissive [MIT-0](https://opensource.org/licenses/MIT-0) license.

@@ -1,14 +1,14 @@
-#import "../index.typ": template, tufted
+#import "../index.typ": template, twilightpage
 #show: template.with(title: "Quick Start")
 
 = Quick Start
 
 == Installation
 
-To initialize a new project using the `tufted` template, run the following command in your terminal:
+To initialize a new project using the `twilightpage` template, run the following command in your terminal:
 
 ```sh
-typst init @preview/tufted:0.1.1 my-website
+typst init @preview/twilightpage:0.1.1 my-website
 cd my-website
 ```
 

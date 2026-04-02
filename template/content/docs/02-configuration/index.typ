@@ -1,4 +1,4 @@
-#import "../index.typ": template, tufted
+#import "../index.typ": template, twilightpage
 #show: template.with(title: "Configuration")
 
 = Website Structure
@@ -14,19 +14,19 @@ The template has 4 main components:
 
 Currently, three functions are implemented:
 
-- `tufted-web` — main template
+- `twilightpage-web` — main template
 - `margin-note` — place content in margin notes (limited support)
 - `full-width` — place content in full-width containers (limited support)
 
 
 == Main Configuration
 
-In `config.typ`, you define own template by customizing the `tufted-web` template from the package. Here you customaize the top navigation links and the website title:
+In `config.typ`, you define own template by customizing the `twilightpage-web` template from the package. Here you customaize the top navigation links and the website title:
 
 ```typst
-#import "@preview/tufted:0.1.1"
+#import "@preview/twilightpage:0.1.1"
 
-#let template = tufted.tufted-web.with(
+#let template = twilightpage.twilightpage-web.with(
   header-links: (
     "/": "Home",
     "/docs/": "Docs",
@@ -34,7 +34,7 @@ In `config.typ`, you define own template by customizing the `tufted-web` templat
     "/cv/": "CV",
     "/about/": "About",
   ),
-  title: "Tufted",
+  title: "TwilightPage",
 )
 ```
 

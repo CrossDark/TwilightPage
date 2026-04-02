@@ -1,4 +1,4 @@
-#import "../index.typ": template, tufted
+#import "../index.typ": template, twilightpage
 #import "@preview/lilaq:0.6.0" as lq
 #show: template
 

@@ -1,13 +1,13 @@
-# Extract version from typst.toml
+# 从 typst.toml 提取版本号 / Extract version from typst.toml
 VERSION := $(shell grep '^version = ' typst.toml | sed 's/version = "\(.*\)"/\1/')
 
-# Get the root directory of the project
+# 获取项目根目录 / Get the root directory of the project
 ROOT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
-# Define phony (non-file) targets
+# 定义伪目标（非文件目标）/ Define phony (non-file) targets
 .PHONY: link link-macos link-linux link-windows sync-assets check build html
 
-# Create symlink to local package cache
+# 创建指向本地包缓存的符号链接 / Create symlink to local package cache
 link:
 ifeq ($(OS),Windows_NT)
 	$(MAKE) link-windows
@@ -23,16 +23,16 @@ endif
 endif
 
 link-macos:
-	mkdir -p ~/Library/Caches/typst/packages/preview/tufted
-	ln -sf $(ROOT_DIR) ~/Library/Caches/typst/packages/preview/tufted/$(VERSION)
+	mkdir -p ~/Library/Caches/typst/packages/preview/twilightpage
+	ln -sf $(ROOT_DIR) ~/Library/Caches/typst/packages/preview/twilightpage/$(VERSION)
 
 link-linux:
-	mkdir -p ~/.cache/typst/packages/preview/tufted
-	ln -sf $(ROOT_DIR) ~/.cache/typst/packages/preview/tufted/$(VERSION)
-# TODO: Test on Windows
+	mkdir -p ~/.cache/typst/packages/preview/twilightpage
+	ln -sf $(ROOT_DIR) ~/.cache/typst/packages/preview/twilightpage/$(VERSION)
+# TODO: 在 Windows 上测试 / Test on Windows
 link-windows:
-	if not exist "%LOCALAPPDATA%\typst\packages\preview\tufted" mkdir "%LOCALAPPDATA%\typst\packages\preview\tufted"
-	mklink /D "%LOCALAPPDATA%\typst\packages\preview\tufted\$(VERSION)" .
+	if not exist "%LOCALAPPDATA%\typst\packages\preview\twilightpage" mkdir "%LOCALAPPDATA%\typst\packages\preview\twilightpage"
+	mklink /D "%LOCALAPPDATA%\typst\packages\preview\twilightpage\$(VERSION)" .
 
 
 ASSETS := devices.webp
@@ -47,13 +47,13 @@ clean:
 	rm -rf template/_site
 	find . -name ".DS_Store" -delete
 
-# Check package for common issues
+# 检查包的常见问题 / Check package for common issues
 check:
 	typst-package-check check
 
 html: link
 	$(MAKE) -C template html
 
-# Build a zip archive for submission
+# 构建用于提交的 zip 归档 / Build a zip archive for submission
 build: sync-assets clean
-	zip -r tufted-${VERSION}.zip src/ template/ assets/ LICENSE README.md typst.toml
+	zip -r twilightpage-${VERSION}.zip src/ template/ assets/ LICENSE README.md typst.toml

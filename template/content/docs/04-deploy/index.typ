@@ -1,4 +1,4 @@
-#import "../index.typ": template, tufted
+#import "../index.typ": template, twilightpage
 #show: template.with(title: "Deployment")
 
 = Deployment

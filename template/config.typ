@@ -1,11 +1,15 @@
-#import "@preview/tufted:0.1.1"
+// 导入 TwilightPage 包 / Import TwilightPage package
+#import "@preview/twilightpage:0.1.1"
 
-#let template = tufted.tufted-web.with(
+// 定义模板配置 / Define template configuration
+#let template = twilightpage.twilightpage-web.with(
+  // 头部导航链接 / Header navigation links
   header-links: (
     "/": "Home",
     "/docs/": "Docs",
     "/blog/": "Blog",
     "/cv/": "CV",
   ),
-  title: "Tufted",
+  // 网站标题 / Website title
+  title: "TwilightPage",
 )

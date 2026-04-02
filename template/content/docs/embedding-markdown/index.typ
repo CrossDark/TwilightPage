@@ -1,4 +1,4 @@
-#import "../index.typ": template, tufted
+#import "../index.typ": template, twilightpage
 #import "@preview/cmarker:0.1.8"
 #import "@preview/mitex:0.2.6": mitex
 #show: template
@@ -8,7 +8,7 @@
 You can embed Markdown content within your Typst documents using `cmarker`. This is particularly useful when incorporating existing Markdown files into your Typst-based website. To render mathematical expressions, use `mitex`.
 
 ```typst
-#import "../index.typ": template, tufted
+#import "../index.typ": template, twilightpage
 #import "@preview/cmarker:0.1.8"
 #import "@preview/mitex:0.2.6": mitex
 #show: template

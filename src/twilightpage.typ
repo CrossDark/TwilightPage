@@ -14,9 +14,9 @@
   },
 )
 
-#let tufted-web(
+#let twilightpage-web(
   header-links: none,
-  title: "Tufted",
+  title: "TwilightPage",
   lang: "en",
   css: (
     "https://cdnjs.cloudflare.com/ajax/libs/tufte-css/1.8.0/tufte.min.css",
@@ -25,7 +25,7 @@
   ),
   content,
 ) = {
-  // Apply styling
+  // 应用样式 / Apply styling
   show: template-math
   show: template-refs
   show: template-notes
@@ -36,24 +36,24 @@
   html.html(
     lang: lang,
     {
-      // Head
+      // 头部 / Head
       html.head({
         html.meta(charset: "utf-8")
         html.meta(name: "viewport", content: "width=device-width, initial-scale=1")
         html.title(title)
 
-        // Stylesheets
+        // 样式表 / Stylesheets
         for (css-link) in css {
           html.link(rel: "stylesheet", href: css-link)
         }
       })
 
-      // Body
+      // 主体 / Body
       html.body({
-        // Add website header
+        // 添加网站头部 / Add website header
         make-header(header-links)
 
-        // Main content
+        // 主内容 / Main content
         html.article(
           html.section(content),
         )

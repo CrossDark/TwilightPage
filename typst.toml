@@ -1,12 +1,12 @@
 [package]
-name = "tufted"
+name = "twilightpage"
 version = "0.1.1"
-entrypoint = "src/tufted.typ"
+entrypoint = "src/twilightpage.typ"
 authors = ["Vsevolod Shegolev <https://github.com/vsheg>"]
-homepage = "https://tufted.vsheg.com"
-repository = "https://github.com/vsheg/tufted"
+homepage = "https://twilightpage.vsheg.com"
+repository = "https://github.com/vsheg/twilightpage"
 license = "MIT"
-description = "Responsive web layout with wide margins, elegant sidenotes, and restrained typography."
+description = "Responsive web layout with wide margins, elegant sidenotes, and restrained typography. (TwilightPage fork)"
 compiler = "0.14.0"
 exclude = ["tests"]
 categories = ["layout", "utility"]
