@@ -9,7 +9,7 @@
 #import "refs.typ": template-refs       // 引用和交叉引用处理 / Reference and cross-reference handling
 #import "notes.typ": template-notes     // 脚注和边注处理 / Footnote and margin note handling
 #import "figures.typ": template-figures // 图表处理 / Figure handling
-#import "layout.typ": full-width, margin-note  // 布局工具 / Layout utilities
+#import "layout.typ": full-width, margin-note, nest-block  // 布局工具 / Layout utilities
 
 // 创建网站头部导航 / Create website header navigation
 // 参数 / Parameters:
@@ -91,17 +91,25 @@
 
 // Abyss 深渊主题 / Abyss dark theme
 // 提供深色配色方案，适合低光环境阅读
+// 支持根据标题层级自动缩进内容
 // Provides a dark color scheme, suitable for low-light reading
+// Supports automatic content indentation based on heading levels
 //
 // 参数 / Parameters:
 //   - header-links: 头部导航链接列表 / Header navigation links list (默认 / default: none)
 //   - title: 网页标题 / Webpage title (默认 / default: "TwilightPage")
 //   - lang: 语言代码 / Language code (默认 / default: "zh")
+//   - indent: 是否启用缩进 / Enable indentation (默认 / default: true)
+//   - indent-color: 缩进线颜色 / Indentation line color (默认 / default: #30363d)
+//   - indent-size: 缩进距离 / Indentation size (默认 / default: 1.5em)
 //   - content: 页面主要内容 / Main page content
 #let abyss(
   header-links: none,
   title: "TwilightPage",
   lang: "zh",
+  indent: true,
+  indent-color: rgb(48, 54, 61),
+  indent-size: 1.5em,
   content,
 ) = {
   // 应用 abyss 主题特定的 CSS
@@ -112,12 +120,25 @@
     "/assets/custom.css",
   )
   
+  // 如果启用缩进，应用嵌套缩进块
+  // If indentation is enabled, apply nested indentation block
+  let processed-content = if indent {
+    nest-block(
+      content,
+      depth: 1,
+      line-color: indent-color,
+      inset: indent-size,
+    )
+  } else {
+    content
+  }
+  
   // 调用主模板函数
   twilightpage-web(
     header-links: header-links,
     title: title,
     lang: lang,
     css: abyss-css,
-    content,
+    processed-content,
   )
 }

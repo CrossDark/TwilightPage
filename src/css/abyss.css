@@ -331,6 +331,43 @@ li::marker {
 }
 
 /* ============================================
+   NESTED INDENTATION
+   ============================================ */
+
+/* 缩进区块样式 / Indented block styles */
+.nested-section {
+  border-left: 2px solid var(--border-color);
+  padding-left: 1.5em;
+  margin-left: 0;
+  margin-bottom: 1em;
+}
+
+/* 不同层级的缩进颜色 / Different indentation levels colors */
+.nested-section.level-1 {
+  border-left-color: var(--accent-blue);
+}
+
+.nested-section.level-2 {
+  border-left-color: var(--accent-cyan);
+}
+
+.nested-section.level-3 {
+  border-left-color: var(--accent-purple);
+}
+
+.nested-section.level-4 {
+  border-left-color: var(--accent-green);
+}
+
+/* 缩进区块内的标题样式 / Heading styles within indented blocks */
+.nested-section h1,
+.nested-section h2,
+.nested-section h3,
+.nested-section h4 {
+  margin-top: 0.5em;
+}
+
+/* ============================================
    SCROLLBAR
    ============================================ */
 
