@@ -1,2 +1,4 @@
 settings.json
 template/_site/
+test-env/
+test-env/_site/

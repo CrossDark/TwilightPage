@@ -1,4 +1,6 @@
 {
     "livePreview.defaultPreviewPath": "/template/_site/index.html",
     "livePreview.serverRoot": "/template/_site/",
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 1000
 }

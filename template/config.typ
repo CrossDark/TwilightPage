@@ -1,5 +1,5 @@
 // 导入 TwilightPage 包 / Import TwilightPage package
-#import "@preview/twilightpage:0.1.1"
+#import "@preview/twilightpage:0.0.1"
 
 // 定义模板配置 / Define template configuration
 #let template = twilightpage.twilightpage-web.with(

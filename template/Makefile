@@ -26,6 +26,7 @@ _site/%.html: content/%.typ
 assets:
 	@mkdir -p _site/assets
 	@cp -r assets/* _site/assets/
+	@cp -r ../src/css/* _site/assets/
 
 # 清理规则，删除生成的文件 / A clean rule to remove generated files
 clean:
